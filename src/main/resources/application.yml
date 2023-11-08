@@ -7,3 +7,14 @@ server:
     accept-count: ${TOMCAT_ACCEPT_COUNT:100}         # 작업큐의 사이즈
     connection-timeout: ${TOMCAT_CONNECTION_TIMEOUT:20000} # timeout 판단 기준 시간, 20초
   port: ${TOMCAT_PORT:8080}                  # 서버를 띄울 포트번호
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    configprops:
+      show-values: always
+    env:
+      show-values: always
